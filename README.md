@@ -2,6 +2,9 @@
 
 TP 1 **E-Commerce**
 
+Link Repositorio (Privado) donde se realizo el trabajo:
+https://gitlab.com/dmarianetti/ingsoft-02montaldo-tp-grupo13
+
 ## Integrantes
 
 | Nombre | Padrón |
@@ -17,8 +20,8 @@ TP 1 **E-Commerce**
 
 ## 1. Clonación
 ```bash
-git clone git@gitlab.com:dmarianetti/ingsoft-02montaldo-tp-grupo13.git
-cd IngSoft-02Montaldo-TP-grupo13
+git clone git@github.com:ezelzrt/E-Commerce.git
+cd E-Commerce
 ```
 ## 2. Puesta en marcha
 
