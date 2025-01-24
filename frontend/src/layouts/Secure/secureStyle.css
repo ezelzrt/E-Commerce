@@ -1,0 +1,12 @@
+.secure-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;  
+  }
+  
+  .secure-container {
+    margin: 0 20px; 
+    flex-grow: 1; 
+    padding: 20px; 
+    box-sizing: border-box;
+  }

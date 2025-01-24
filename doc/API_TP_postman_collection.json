@@ -1,0 +1,1183 @@
+{
+	"info": {
+		"_postman_id": "4ada4d87-a568-48f6-9860-0d25011401e0",
+		"name": "API TP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38539563",
+		"_collection_link": "https://tp-ingsoft.postman.co/workspace/TP-IngSoft-Workspace~696fd0ac-fc36-4ccf-9497-e1970ce3a42c/collection/38539563-4ada4d87-a568-48f6-9860-0d25011401e0?action=share&source=collection_link&creator=38539563"
+	},
+	"item": [
+		{
+			"name": "masterProducts",
+			"item": [
+				{
+					"name": "masterProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/masterProducts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"masterProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "masterProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/masterProducts/:id",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"masterProducts",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/masterProducts/:id/attributes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"masterProducts",
+								":id",
+								"attributes"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "jwt",
+				"jwt": [
+					{
+						"key": "secret",
+						"value": "QUJDREVGR0hJSktMTU9QUVJTVFVWV1hZWjAxMjM0NTY3ODlBQkNERUZHSElKS0xNT1BRUlNUVVZXWFlaMDEyMzQ1Njc4OUFCQ0RFRkdISUpLTE1PUFFSU1RVVldYWVowMTIzNDU2Nzg5",
+						"type": "string"
+					},
+					{
+						"key": "algorithm",
+						"value": "HS256",
+						"type": "string"
+					},
+					{
+						"key": "isSecretBase64Encoded",
+						"value": false,
+						"type": "boolean"
+					},
+					{
+						"key": "payload",
+						"value": "{}",
+						"type": "string"
+					},
+					{
+						"key": "addTokenTo",
+						"value": "header",
+						"type": "string"
+					},
+					{
+						"key": "headerPrefix",
+						"value": "Bearer",
+						"type": "string"
+					},
+					{
+						"key": "queryParamKey",
+						"value": "token",
+						"type": "string"
+					},
+					{
+						"key": "header",
+						"value": "{}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n    {\r\n        \"masterProductId\": 1,\r\n        \"name\": \"NombreDelProducto\",\r\n        \"stock\": 3,\r\n        \"attributes\": [\r\n            {\r\n                \"id\": 1,\r\n                \"value\": 2\r\n            },\r\n            {\r\n                \"id\": 2,\r\n                \"value\": 2\r\n            },\r\n            {\r\n                \"id\": 3,\r\n                \"value\": 2\r\n            }\r\n        ]\r\n    }\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/products",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products/:productId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productsByMasterProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products/search?masterProduct=2",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "masterProduct",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "stock",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products/:productId/stock",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								":productId",
+								"stock"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateStock",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addStock\": 10\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/products/:productId/stock",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								":productId",
+								"stock"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCompromisedStock",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"addCompromisedStock\": -5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/products/:productId/compromisedStock",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								":productId",
+								"compromisedStock"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/products/:productId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "152"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "getUser",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"Fernandez\",\r\n    \"email\": \"jan@gmail.com\",\r\n    \"password\": \"password123\",\r\n    \"photo\": \"http://mifoto.com/yo.jpg\",\r\n    \"age\": 20,\r\n    \"gender\": \"F\",\r\n    \"address\": \"Calle 123, CABA, ARG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/users/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Jane\",\r\n    \"lastName\": \"F\",\r\n    \"email\": \"jan@gmail.com\",\r\n    \"password\": \"password123\",\r\n    \"photo\": \"http://mifoto.com/yo.jpg\",\r\n    \"age\": 26,\r\n    \"gender\": \"F\",\r\n    \"address\": \"Calle 123, CABA, ARG\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/users/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "authRegister",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Usuario\",\r\n    \"lastName\": \"Random\",\r\n    \"photo\": \"foton.jgp\",\r\n    \"age\": 32,\r\n    \"gender\": \"Female\",\r\n    \"address\": \"Calle falsa 123\",\r\n    \"email\": \"us_random_123@fi.uba.ar\",\r\n    \"password\": \"superSecreta\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/register",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authLogin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();\r",
+									"pm.environment.set(\"bearerToken\", jsonData.access_token);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"q@q\",\r\n    \"password\":\"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/login",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authRefresh",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIxNCIsIm5hbWUiOiJVc3VhcmlvIiwiYWNjZXNzVHlwZSI6MiwidXNlcklEIjoxNCwic3ViIjoidXNfcmFuZG9tXzQ1NkBmaS51YmEuYXIiLCJpYXQiOjE3MzI1NzMxMTQsImV4cCI6MTczMjY1OTUxNH0.dWsdhz4g6JOauLcb038JQgeXBZSlKY80ds6l2CL5s5SJYO8OdOWVyktTbGmH7ao00AQQrXoST7ojeZR9Pk9CnA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/auth/refresh",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "authRefresh",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIxNCIsIm5hbWUiOiJVc3VhcmlvIiwiYWNjZXNzVHlwZSI6MiwidXNlcklEIjoxNCwic3ViIjoidXNfcmFuZG9tXzQ1NkBmaS51YmEuYXIiLCJpYXQiOjE3MzI1NzMxMTQsImV4cCI6MTczMjY1OTUxNH0.dWsdhz4g6JOauLcb038JQgeXBZSlKY80ds6l2CL5s5SJYO8OdOWVyktTbGmH7ao00AQQrXoST7ojeZR9Pk9CnA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/auth/refresh",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 25 Nov 2024 22:20:09 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIxNCIsIm5hbWUiOiJVc3VhcmlvIiwiYWNjZXNzVHlwZSI6MiwidXNlcklEIjoxNCwic3ViIjoidXNfcmFuZG9tXzQ1NkBmaS51YmEuYXIiLCJpYXQiOjE3MzI1NzMyMDksImV4cCI6MTczMjY1OTYwOX0.PuvV_eGJhx1zqwWB4_95Q9BS6vxK_swWK4sAf8Rfu_BZRtLnIjuagWqRs75a7BoWYPlFDNCZLoS5EtN6PErxwQ\",\n    \"refresh_token\": \"eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIxNCIsIm5hbWUiOiJVc3VhcmlvIiwiYWNjZXNzVHlwZSI6MiwidXNlcklEIjoxNCwic3ViIjoidXNfcmFuZG9tXzQ1NkBmaS51YmEuYXIiLCJpYXQiOjE3MzI1NzMxMTQsImV4cCI6MTczMjY1OTUxNH0.dWsdhz4g6JOauLcb038JQgeXBZSlKY80ds6l2CL5s5SJYO8OdOWVyktTbGmH7ao00AQQrXoST7ojeZR9Pk9CnA\"\n}"
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/orders",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseURL}}/orders",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"_postman_previewlanguage": null,
+							"header": null,
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIxMSIsInVzZXJJRCI6MTEsIm5hbWUiOiJOb21icmVDdXN0b21lciIsImFjY2Vzc1R5cGUiOjIsInN1YiI6InFAcSIsImlhdCI6MTczMjU3NTI0MywiZXhwIjoxNzMyNjYxNjQzfQ.ixKE2D0CUKrw7sj4TUIS-fffr7JVroPsAtjTwEURudUhK_jdZbbzHfhQumxGPUiT9vCSvfHZT5awgoytmrWRxQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"productId\": 1,\n        \"amount\": 3\n    },\n    {\n        \"productId\": 2,\n        \"amount\": 2\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orders",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiIxMCIsInVzZXJJRCI6MTAsIm5hbWUiOiJOb21icmVBZG1pbiIsImFjY2Vzc1R5cGUiOjEsInN1YiI6ImFAYSIsImlhdCI6MTczMjU3MzE3MywiZXhwIjoxNzMyNjU5NTczfQ.iYzBbfYMa0lqKU8VO35NIgpAQDHDYSNq7US0pGsXqTJ3rrI_G-WjUTDzbE2SebJnNVqFbIzDIRsdDY_eHMz8mQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/orders/:orderId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orderStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"newStatus\": 1 // valor de enum OrderStatus\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/orders/:orderId/status",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"orders",
+								":orderId",
+								"status"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "secure",
+			"item": [
+				{
+					"name": "attribute",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/secure/attribute/",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"secure",
+								"attribute",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "attribute",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/secure/attribute",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"secure",
+								"attribute"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "modifyOrder",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/secure/orders/orderID",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"secure",
+								"orders",
+								"orderID"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/secure/orders",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"secure",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/secure/orders/orderiD",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"secure",
+								"orders",
+								"orderiD"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "userProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/secure/users/:userId",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"secure",
+								"users",
+								":userId"
+							],
+							"variable": [
+								{
+									"key": "userId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rules",
+			"item": [
+				{
+					"name": "rules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/rules",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"rules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rulesOptions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/rules/followers",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"rules",
+								"followers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "rule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rulesFollowerType\": 1, // valor del enum\r\n    \"rulesFollowerId\": 2, // Id de la cosa concreta en la bdd\r\n    \"operation\": 1, // valor del enum\r\n    \"value\": 5, // valor a comparar\r\n    \"ruleGroupId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseURL}}/rules",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"rules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ruleState",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/rules/:ruleId/state",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"rules",
+								":ruleId",
+								"state"
+							],
+							"variable": [
+								{
+									"key": "ruleId",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "attribute",
+			"item": [
+				{
+					"name": "attributes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL}}/attributes",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"attributes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{bearerToken}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "http://localhost",
+			"type": "string"
+		},
+		{
+			"key": "port",
+			"value": "20002",
+			"type": "string"
+		},
+		{
+			"key": "baseURL",
+			"value": "{{local}}:{{port}}/api",
+			"type": "string"
+		},
+		{
+			"key": "bearerToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
