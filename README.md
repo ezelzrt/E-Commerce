@@ -1,9 +1,16 @@
-# TP IngSoft 1 Grupo 13 curso Montaldo
+# TP IngSoft 1 Grupo 13 Curso Montaldo - Facultad de Ingeniería UBA
 
-TP 1 **E-Commerce**
+- TP 1 **E-Commerce**
 
-Link Repositorio (Privado) donde se realizo el trabajo:
-https://gitlab.com/dmarianetti/ingsoft-02montaldo-tp-grupo13
+- [Ver Consigna TP](consigna_TP.pdf)
+
+- El trabajo se realizo durante un mes y medio en grupos de 6 personas. A medida que se avanzaba en el proyecto se iban modificando los requerimientos finales según tiempos y avance de los mismos.
+
+- Repositorio (Privado) donde se realizo el trabajo:
+    - https://gitlab.com/dmarianetti/ingsoft-02montaldo-tp-grupo13
+    -       
+    - ![image](https://github.com/user-attachments/assets/396730fc-fe17-42c9-a90d-bb66f8adb8d0)
+
 
 ## Integrantes
 
@@ -55,7 +62,7 @@ npm i --force
 npm run start
 ```
 
-### 3. Uso
+## 3. Uso
 
 Existen dos tipos de usuario: 
 - `Admin:` Usuario con acceso a las interfaces **/secure**. Puede dar de alta atributos, productos, controlar stock, etc. No puede darse de alta mediante interfaz.
